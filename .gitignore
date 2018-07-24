@@ -2,3 +2,5 @@
 **/.ipynb_checkpoints
 527.jl
 527_jl.ipynb
+**/build
+*.so
