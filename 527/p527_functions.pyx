@@ -15,8 +15,8 @@ def memoize(f):
 
 
 @memoize
-def B(n):
-    """Compute expected iterations of standard binary search."""
+def B(long double n):
+    """Return avg iterations of standard binary search on array of len n."""
     if n == 0:
         return 0
     elif n == 1:
@@ -27,14 +27,11 @@ def B(n):
                 ((n - g) / n) * (B(n - g) + 1))
 
 
-if __name__ == "__main__":
-    %load_ext cython
-
-    %%cython
-    def R(long double n):
-        cdef long double R, i
-        R, i = 1, 1
-        while i < n + 1:
-            R = (1 / i ** 2) * ((i**2 - 1)*R + 2*i - 1)
-            i += 1
+def R(long double n):
+    """Return avg iterations of random binary search on array of len n."""
+    cdef long double R, i
+    R, i = 1, 1
+    while i < n + 1:
+        R = (1 / i ** 2) * ((i**2 - 1)*R + 2*i - 1)
+        i += 1
     return R

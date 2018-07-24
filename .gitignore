@@ -1,5 +1,4 @@
-.DS-Store
-.ipynb-checkpoints
+**/.DS_Store
+**/.ipynb-checkpoints
 527.jl
 527_jl.ipynb
-527/build
